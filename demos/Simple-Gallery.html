@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+
+<title>Simple Gallery</title>
+
+
+<style type="text/css">
+body, html {
+	margin:0;
+	padding:0;
+	background-color:#CDDFFC;
+}
+img {
+	border:0;
+}
+#wrapper {
+	width:100%;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1.5em;
+	color:#333;
+}
+.gallery {
+	margin: 0 auto;
+	padding:0;
+	background-color:#fff;
+	width:600px;
+	position:relative;
+	font-size:0;
+	padding:15px;
+}
+#navLeft, #navRight{
+	position:absolute;
+	background:#999999;
+	color:#000;
+	border:0;
+	font-size:30px;
+	line-height:0;
+	text-align:center;
+	width:25px;
+	height:25px;
+	border-radius:50%;
+	bottom:50px;
+	z-index:5;
+	cursor:pointer;
+}
+#navLeft{
+	left:25px;
+}
+#navLeft div, #navRight div{
+	margin-top:-2px;
+}
+#navRight {
+	right:25px;
+}
+#navLeft:disabled, #navRight:disabled {
+	color: #7f7f7f;
+	cursor:default;
+}
+
+#thumbs {
+	width:453px;
+	margin:0 auto;
+	background:#333;
+	overflow:hidden;
+	white-space:nowrap;
+	position:relative;
+	display:block;
+	text-align:center;
+	padding:10px;
+}
+#thumbs div {
+	display:inline-block;
+	position:relative;
+	width:150px;
+	border-right:1px solid #fff; 
+	padding:5px 0;
+}
+#thumbs div:last-of-type {
+	border:none;	
+}
+#thumbs img {
+	width:150px;
+	max-height:84px;
+	}
+#big {
+	position:relative;
+	display:block;
+	border:solid 20px #999;
+	background:#999;
+	width: 560px;
+	height:auto;
+	overflow:hidden;
+}
+#big img {
+	display:block;
+	width:560px;
+	height:auto;
+	position:absolute;
+}
+#bigLeft, #bigRight {
+	height:25%;
+	width:7%;
+	position:absolute;
+	z-index:5;
+	background-color:#000000;
+	opacity:0.15;
+	font-size:45px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#ffffff;
+	top:37%;
+	border: 0;
+	cursor:pointer;
+}
+#bigLeft:hover, #bigRight:hover {
+	opacity: 0.65;
+}
+#bigLeft:hover:disabled, #bigRight:hover:disabled {
+	opacity:0.15;
+	cursor:default;
+	background:red;
+}
+
+#bigLeft {
+	left:0;
+}
+#bigRight {
+	right:0;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+	<div class="gallery">
+    	<div id="big">
+        	<img id="firstImg" src="" />
+            <button id="bigLeft">&lsaquo;</button>
+            <button id="bigRight">&rsaquo;</button>
+        </div>
+        
+        <button id="navLeft"><div>&lsaquo;</div></button>
+        <button id="navRight"><div>&rsaquo;</div></button>
+      <div id="thumbs">
+        	<div><a href="http://lorempixel.com/450/250/abstract/"><img src="http://lorempixel.com/450/250/abstract/" /></a></div> 
+            <div><a href="http://lorempixel.com/450/450/city/"><img src="http://lorempixel.com/450/450/city/" /></a></div>
+            <div><a href="http://lorempixel.com/450/250/people/"><img src="http://lorempixel.com/450/250/people/" /></a></div>
+            <div><a href="http://lorempixel.com/450/250/transport/"><img src="http://lorempixel.com/450/250/transport/" /></a></div>
+            <div><a href="http://lorempixel.com/450/250/animals/"><img src="http://lorempixel.com/450/250/animals/" /></a></div>
+            <div><a href="http://lorempixel.com/450/250/food/"><img src="http://lorempixel.com/450/250/food/" /></a></div>
+            <div><a href="http://lorempixel.com/450/250/nature/"><img src="http://lorempixel.com/450/250/nature/" /></a></div>
+            <div><a href="http://lorempixel.com/450/250/business/"><img src="http://lorempixel.com/450/250/business/" /></a></div>
+            <div><a href="http://lorempixel.com/450/250/nightlife/"><img src="http://lorempixel.com/450/250/nightlife/" /></a></div>
+            <div><a href="http://lorempixel.com/450/250/cats/"><img src="http://lorempixel.com/450/250/cats/" /></a></div>
+            <div><a href="http://lorempixel.com/450/250/technics/"><img src="http://lorempixel.com/450/250/technics/" /></a></div>
+      </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="gallery.js"></script>
+</body>
+</html>

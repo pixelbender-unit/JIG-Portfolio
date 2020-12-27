@@ -1,0 +1,689 @@
+@charset "utf-8";
+/* CSS Styles for Multimedia Portfolio of Jared i.Greene */
+
+@font-face {
+	font-family: Harabara;
+	src: url('//www.sidewayzine.com/pf/styles/Harabara.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: NEUROPOL;
+	src: url('//www.sidewayzine.com/pf/styles/NEUROPOL.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: BirdmanL;
+	src: url('//www.sidewayzine.com/pf/styles/BIRDL___.TTF') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: Comfortaa;
+	src: url('//www.sidewayzine.com/pf/styles/Comfortaa-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: Timeburner;
+	src: url('//www.sidewayzine.com/pf/styles/timeburner_regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+html {
+	background-color: #666;
+}
+body {
+	margin: 0 0;
+	padding: 0;
+}
+#homeBG {
+	background: url(http://www.sidewayzine.com/pf/images/bgs/homeBG.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.sidewayzine.com/pf/images/bgs/homeBG.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.sidewayzine.com/pf/images/bgs/homeBG.jpg', sizingMethod='scale')";
+}
+h1 {
+	font-family: BirdmanL, "Courier New", Courier, monospace;
+	font-size: 1.8em;
+	margin-bottom: -10px;
+}
+h2 {
+	font-family: Timeburner, "Courier New", Courier, monospace;
+	font-size: 1.6em;
+	margin-bottom: -10px;
+	margin-top: -10px;
+	color: #038B9E;
+}
+.container {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0 0;
+	overflow: hidden;
+}
+.header {
+	color: #9F3;
+	text-align: center;
+	font-family: Harabara, Georgia, Verdana, Geneva, sans-serif;
+	font-size: 6em;
+	max-width: 5.6em;
+	padding: 0;
+	margin-top: -10px;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.superShadow {
+	color: #9F3;
+	text-shadow: 0px 0px 0 rgb(173, 203, -52), 0px 1px 0 rgb(163, 193, -62), 0px 2px 0 rgb(153, 183, -72), 0px 3px 0 rgb(143, 173, -82), 0px 4px 0 rgb(133, 163, -92), 0px 5px 0 rgb(123, 153, -102), 0px 6px 0 rgb(112, 142, -113), 0px 7px 0 rgb(102, 132, -123), 0px 8px 0 rgb(92, 122, -133), 0px 9px 0 rgb(82, 112, -143), 0px 10px 0 rgb(72, 102, -153), 0px 11px 0 rgb(62, 92, -163), 0px 12px 0 rgb(52, 82, -173), 0px 13px 12px rgba(0,0,0,1), 0px 13px 1px rgba(0,0,0,0.5), 0px 0px 12px rgba(0,0,0,.2);
+}
+.header a {
+	text-decoration: none;
+	color: #9F3;
+	-webkit-transition: color 0.3s ease-in-out 0s;
+	-moz-transition: color 0.3s ease-in-out 0s;
+	-ms-transition: color 0.3s ease-in-out 0s;
+	-o-transition: color 0.3s ease-in-out 0s;
+	transition: color 0.3s ease-in-out 0s;
+}
+.header a:visited {
+	color: #9F3;
+}
+.header a:hover {
+	color: #F00;
+}
+.subheader {
+	position: relative;
+	text-align: center;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background-color: rgba(255,255,255,.75);
+	border: thin solid rgba(255,255,255,.35);
+	border-radius: 5px;
+	max-width: 350px;
+	height: 30px;
+	font-size: 1.5em;
+	letter-spacing: .2em;
+	margin: 0 auto;
+	z-index: 99;
+	margin-bottom: 10px;
+	margin-top: -15px;
+}
+/* NAVIGATION MENU */
+.nav-container {
+	background-color: rgba(0,0,0,.75);
+	border: 3px solid rgba(0,0,0,.5);
+	border-radius: 10px;
+	text-align: center;
+	max-width: 66em;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
+	padding: 0;
+}
+.nav a {
+	color: #96F;
+}
+.nav a:hover {
+	color: #F00;
+	text-decoration: none;
+}
+.nav {
+	font-family: NEUROPOL, Arial, Helvetica;
+	font-size: 1.5em;
+	text-align: center;
+	vertical-align: bottom;
+	padding-left: 2px;
+	padding-right: 2px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 0px;
+	max-width: 200px;
+	display: inline-block;
+	overflow: hidden;
+}
+.nav:hover {
+	border-top: 1px solid #F00;
+	border-left: 1px solid #F00;
+	border-right: 1px solid #F00;
+	border-bottom: none;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+.thumb {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	float: left;
+	border: solid thin #F00;
+	border-radius: 10px;
+	overflow: hidden;
+	width: 350px;
+	height: 200px;
+	padding: 0;
+	z-index: 100;
+}
+#thumb1 {
+	margin-left: -125px;
+}
+#thumb2 {
+	margin-left: -100px;
+}
+#thumb3 {
+	margin-left: -85px;
+}
+#thumb4 {
+	margin-left: -135px;
+	background-color: #F00;
+	background-image: url(http://www.sidewayzine.com/pf/images/nav/vidPoster.jpg);
+}
+#thumb5 {
+	margin-left: -75px;
+}
+#thumb6 {
+	margin-left: -125px;
+}
+#thumb4 video {
+	-webkit-mask: url(http://www.sidewayzine.com/pf/images/nav/vid-thumb-mask.svg);
+	position: relative;
+	width: 350px;
+	height: 200px;
+	margin: 0 auto;
+}
+#vidOverlay {
+	color: #F00;
+	font-family: inherit;
+	text-align: center;
+	z-index: 9999;
+	position: relative;
+	margin-top: -115px;
+	float: left;
+	display: inline-block;
+	background-color: rgba(255,255,255,.4);
+	width: 350px;
+}
+/* End Nav Menu */
+
+.content {
+	font-family: Comfortaa, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	max-width: 75%;
+	background-color: rgba(255,255,255,.75);
+	border: 10px solid rgba(255,255,255,.5);
+	border-radius: 20px;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+	text-align: center;
+	display: table;
+	margin: 0 auto;
+	padding: 5px;
+}
+#contentHome {
+	background-color: rgba(255,255,255,.5);
+	border: 10px solid rgba(255,255,255,.25);
+	max-width: 63em;
+}
+.art-box, .web-box, .photo-box, .vid-box, .gphx-box, .misc-box {
+	text-align: center;
+	vertical-align: central;
+	font-family: Comfortaa, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	width: 300px;
+	height: 300px;
+	background-color: #0C0;
+	border: 3px solid #6F3;
+	border-radius: 10px;
+	display: inline-block;
+	margin: 5px;
+	padding: 0;
+	position:relative;
+	z-index: 1;
+	overflow: hidden;
+	cursor: pointer;
+}
+.art-box {
+	background-image: url(http://www.sidewayzine.com/pf/images/home/writings-bx.jpg)
+}
+.gphx-box {
+	background-image: url(http://www.sidewayzine.com/pf/images/home/gphc-bx.jpg);
+}
+.misc-box {
+	background-image: url(http://www.sidewayzine.com/pf/images/home/3D-bx.jpg);
+}
+.photo-box {
+	background-image: url(http://www.sidewayzine.com/pf/images/home/photo-bx.jpg);
+}
+.web-box {
+	background-image: url(http://www.sidewayzine.com/pf/images/home/web-bx.jpg);
+}
+.vid-box video {
+	-webkit-mask: url(http://www.sidewayzine.com/pf/images/home/hVidMask.svg);
+	position: relative;
+	width: 300px;
+	height: 300px;
+	margin: 0 auto;
+}
+svg {
+	position: relative;
+}
+.box-HL {
+	text-align: center;
+	display: block;
+	margin-top: 45%;
+	padding-bottom: 10px;
+	background-color: rgba(255,255,255,.75);
+	z-index: 9999;
+	position: relative;
+}
+.writBox-HL {
+	text-align: center;
+	display: block;
+	margin-top: 45%;
+	padding-bottom: 10px;
+	background-color: rgba(255,255,255,.9);
+	z-index: 9999;
+	position: relative;
+}
+.vidBox-HL {
+	text-align: center;
+	display: block;
+	margin-top: -61%;
+	padding-bottom: 10px;
+	background-color: rgba(255,255,255,.75);
+	z-index: 9999;
+	position: relative;
+}
+.box-wipe {
+	font-family: Comfortaa, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	text-align: left;
+	padding: 3px;
+	position: absolute;
+	height: 45%;
+	background-color: rgba(255,255,255,.75);
+	height: 100%;
+	width: 300px;
+	margin-left: 0%;
+	margin-top: 2%;
+}
+.writ-wipe {
+	font-family: Comfortaa, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	text-align: left;
+	padding: 3px;
+	position: absolute;
+	height: 45%;
+	background-color: rgba(255,255,255,.9);
+	height: 100%;
+	width: 300px;
+	margin-left: 0%;
+	margin-top: 2%;
+}
+.web-wipe {
+	font-family: Comfortaa, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	text-align: left;
+	padding: 3px;
+	position: absolute;
+	height: 45%;
+	background-color: rgba(255,255,255,.85);
+	height: 100%;
+	width: 300px;
+	margin-left: 0%;
+	margin-top: 2%;
+}
+.desc {
+	font-family: Comfortaa, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	text-align: left;
+}
+.whitebar {
+	height: 3px;
+	width: 300px;
+	position: relative;
+	margin-left: 0px;
+	background-color: #66FF33;
+}
+.footer {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: .6em;
+	background-color: rgba(255,255,255,.75);
+	border: 5px solid white;
+	border-radius: 10px;
+	max-width: 61em;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+
+/* forces back to desktop version */
+@media (min-width: 501px) {
+.header {
+	color: #9F3;
+	text-align: center;
+	font-family: Harabara, Verdana, Geneva, sans-serif;
+	font-size: 6em;
+	min-width: 350px;
+	margin-top: -12px;
+}
+.subheader {
+	text-align: center;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background-color: rgba(255,255,255,.75);
+	border: thin solid rgba(255,255,255,.35);
+	border-radius: 5px;
+	max-width: 350px;
+	height: 30px;
+	font-size: 1.5em;
+	letter-spacing: .2em;
+	/*	min-width: 400px;*/
+	margin-bottom: 10px;
+	margin-top: -15px;
+}
+.content {
+	font-family: Comfortaa, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	max-width: 75%;
+	background-color: rgba(255,255,255,.75);
+	border: 10px solid rgba(255,255,255,.5);
+	border-radius: 20px;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+	text-align: center;
+	display: table;
+	margin: 0 auto;
+	padding: 5px;
+}
+#contentHome {
+	background-color: rgba(255,255,255,.5);
+	border: 10px solid rgba(255,255,255,.25);
+	max-width: 63em;
+}
+.art-box, .web-box, .photo-box, .vid-box, .gphx-box, .misc-box {
+	text-align: center;
+	vertical-align: central;
+	font-family: Comfortaa, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	width: 300px;
+	height: 300px;
+	background-color: #0C0;
+	border: 3px solid #6F3;
+	border-radius: 10px;
+	display: inline-block;
+	position:relative;
+	margin: 5px;
+	padding: 0;
+	z-index: 1;
+	overflow: hidden;
+	cursor: pointer;
+}
+.footer {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: .6em;
+	background-color: rgba(255,255,255,.75);
+	border: 5px solid white;
+	border-radius: 10px;
+	max-width: 61em;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	margin-bottom: 0;
+	}
+}
+
+/* iphone 4*/
+@media (max-width: 320px) {
+.art-box, .web-box, .photo-box, .vid-box, .gphx-box, .misc-box {
+	max-width: 7em;
+	max-height: 7em;
+}
+
+#homeBG {
+	background: url(http://www.sidewayzine.com/pf/images/bgs/homeBG-mob.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.sidewayzine.com/pf/images/bgs/homeBG-mob.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.sidewayzine.com/pf/images/bgs/homeBG-mob.jpg', sizingMethod='scale')";
+}
+.container {
+	width: 100%;
+	height: 100%;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 50px;
+	margin: 0 0;
+	overflow: hidden;
+}
+h1 {
+	font-size: .8em;
+	margin-bottom: -10px;
+}
+.header {
+	color: #9F3;
+	text-align: center;
+	font-family: Harabara, Verdana, Geneva, sans-serif;
+	font-size: 3em;
+	margin-top: -5px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.superShadow {
+	color: #9F3;
+text-shadow:0px 0px 0 rgb(-17,218,-25),0px 1px 0 rgb(-42,193,-50),0px 2px 0 rgb(-67,168,-75),0px 3px 0 rgb(-92,143,-100),0px 4px 0 rgb(-117,118,-125),0px 5px 0 rgb(-142,93,-150), 0px 6px 0 rgb(-167,68,-175),0px 7px 6px rgba(0,0,0,1),0px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+
+}
+.subheader {
+	position: relative;
+	text-align: center;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size:1em;
+	background-color: rgba(255,255,255,.75);
+	border: thin solid rgba(255,255,255,.35);
+	border-radius: 5px;
+	width: 70%;
+	height: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:0;
+	margin-bottom:0;
+}
+.content {
+	font-family: Comfortaa, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 5;
+	background-color: rgba(255,255,255,.75);
+	border: 5px solid rgba(255,255,255,.8);
+	border-radius: 10px;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+.art-box, .web-box, .photo-box, .vid-box, .gphx-box, .misc-box {
+	max-width: 9em;
+	max-height: 9em;
+}
+.footer {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: .6em;
+	background-color: rgba(255,255,255,.75);
+	border:none;
+	border-radius:0;
+	width: 100%;
+	padding: 3;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-top: 5px;
+	}
+}
+/* ************************************************************** */
+/* mobile in portrait */
+@media (min-width: 401px) and (max-width: 500px) {
+#homeBG {
+	background: url(http://www.sidewayzine.com/pf/images/bgs/homeBG-mob.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.sidewayzine.com/pf/images/bgs/homeBG-mob.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.sidewayzine.com/pf/images/bgs/homeBG-mob.jpg', sizingMethod='scale')";
+}
+.container {
+	width: 100%;
+	height: 100%;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 50px;
+	margin: 0 0;
+	overflow: hidden;
+}
+h1 {
+	font-size: .8em;
+	margin-bottom: -10px;
+}
+.header {
+	color: #9F3;
+	text-align: center;
+	font-family: Harabara, Verdana, Geneva, sans-serif;
+	font-size: 3em;
+	margin-top: -5px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.superShadow {
+	color: #9F3;
+text-shadow:0px 0px 0 rgb(-17,218,-25),0px 1px 0 rgb(-42,193,-50),0px 2px 0 rgb(-67,168,-75),0px 3px 0 rgb(-92,143,-100),0px 4px 0 rgb(-117,118,-125),0px 5px 0 rgb(-142,93,-150), 0px 6px 0 rgb(-167,68,-175),0px 7px 6px rgba(0,0,0,1),0px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+
+}
+.subheader {
+	position: relative;
+	text-align: center;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size:1em;
+	background-color: rgba(255,255,255,.75);
+	border: thin solid rgba(255,255,255,.35);
+	border-radius: 5px;
+	width: 70%;
+	height: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:0;
+	margin-bottom:0;
+}
+.content {
+	font-family: Comfortaa, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 5;
+	background-color: rgba(255,255,255,.75);
+	border: 5px solid rgba(255,255,255,.8);
+	border-radius: 10px;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+.art-box, .web-box, .photo-box, .vid-box, .gphx-box, .misc-box {
+	max-width: 9em;
+	max-height: 9em;
+}
+.footer {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: .6em;
+	background-color: rgba(255,255,255,.75);
+	border:none;
+	border-radius:0;
+	width: 100%;
+	padding: 3;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-top: 5px;
+	}
+}
+
+/* @media (max-device-width: 500px) and (orientation: landscape) {
+.header {
+	text-align: center;
+	font-family: Harabara, Verdana, Geneva, sans-serif;
+	font-size: 4em;
+	min-width: 350px;
+	margin-top: -5px;
+	margin-bottom: 5px;
+}
+.subheader {
+	text-align: center;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 1.2em;
+	letter-spacing: .2em;
+	margin-bottom: 30px;
+}
+.art-box, .web-box, .photo-box, .vid-box, .gphx-box, .misc-box {
+	text-align: center;
+	font-family: Comfortaa, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	border: 3px solid #6F3;
+	width: 12em;
+	height: 12em;
+	background-color: #0C0;
+	border-radius: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 10px;
+	position: relative;
+	z-index: 1;
+	padding: 0;
+}
+.content {
+	width: 100%;
+	max-width: 100%;
+	border: medium solid black;
+	text-align: center;
+	margin: 0 auto;
+	padding-bottom: 10px;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+}
+.footer {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: .6em;
+	border: 5px solid rgba(255,255,255,.5);
+	border-radius: 10px;
+	max-width: 300px;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-top: 5px;
+	}
+}*/

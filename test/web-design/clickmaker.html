@@ -1,0 +1,336 @@
+<html>
+<head>
+<title>ClickHere Page Generator</title>
+
+<!-- Call Downloadify Plugin -->
+<script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript" src="js/downloadify.min.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+// This app's code was rewritten using jQuery instead of the bulky previous JavaScript on 4/14/2014
+//  ~Jared
+
+// Easier Find/Replace
+function jFindArtist() {
+	var artistInput = $('input[name=replaceWith]').val();
+	var pageOutput = $('#fulltext');
+	var codeOutput = $('#jsCode');
+	var filenameOutput = $('#filename');
+pageOutput.val(pageOutput.val().replace(/artist/gi,artistInput));
+codeOutput.val(codeOutput.val().replace(/artist/gi,artistInput));
+filenameOutput.val(filenameOutput.val().replace(/artist/gi,artistInput));
+};
+function jFindTrack() {
+	var trackInput = $('input[name=replaceWitht]').val();
+	var pageOutput = $('#fulltext');
+	var codeOutput = $('#jsCode');
+	var filenameOutput = $('#filename');
+pageOutput.val(pageOutput.val().replace(/track/gi,trackInput));
+codeOutput.val(codeOutput.val().replace(/track/gi,trackInput));
+filenameOutput.val(filenameOutput.val().replace(/track/gi,trackInput));
+};
+// Toggle views
+function toggleDir() {
+	$('#instructions').slideToggle(350);
+};
+function toggleCode() {
+	$('#toggleVis').animate({
+		opacity:"toggle",
+		height:"toggle"
+		}, 350); 
+}; 
+</script>
+<style type="text/css">
+.hidden {
+	display:none;
+}
+h1 {
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	margin-top:-10px;
+}
+h2 {
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	margin-top:-15px;
+}
+h3 {
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12pt;
+	color:#FFF;
+	background-color:#F00;
+	width:100%;
+	margin-bottom:0px;
+}
+h4 {
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12pt;
+	background-color:#FF0;
+	width:100%;
+}
+label { 
+	font-weight: bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11pt;
+}
+#toggleBox {
+	display:table;
+	background-color:#E0E0E0;
+	border:thin solid #CCC;
+	border-radius:5px;
+	height:20px;
+	padding:3px;
+	float:left;
+	margin-right:25px;
+}
+#directionsToggle {
+	display:table;
+	background-color:#E0E0E0;
+	border:thin solid #CCC;
+	border-radius:5px;
+	height:20px;
+	padding:3px;
+	margin:0 auto;
+}
+#configBox {
+	background-color:#CCC;
+	padding:5px;
+	border:thin solid #CCC;
+	border-radius:5px;	
+	margin: 0 auto;
+	box-shadow: 5px 5px 20px -5px #000;
+}
+#fulltext {
+	background-color:#CCC;
+	border:thin solid #CCC;
+	border-radius:5px;
+	font-family:"Courier New", Courier, monospace;
+	font-size:10pt;
+}
+#instructions {
+	background-color: #E1E1E1;
+	border: thin solid #E1E1E1;
+	border-radius:5px;
+	box-shadow: 5px 5px 20px -5px #000;
+	padding:5px;
+	margin: 0 auto;
+	display:none;
+	width:1200px;
+}
+#resetButton {
+	float:right;
+}
+input {
+	box-shadow:none;	
+}
+</style>
+</head>
+<body onLoad="load();">
+
+
+<h1>FMQB ClickHere Player Generator</h1>
+<h2>Created by Jared i.Greene</h2>
+    <div id="directionsToggle">
+      <label for="toggledir"><strong>View Directions</strong></label>
+      <input id="toggledir" type="checkbox" onChange="toggleDir();" />
+    </div>
+<div id="instructions" style="visibility:none;">
+  <p><strong>Directions:</strong></p>
+  <ul>
+    <li>After the song has been cut into 30 seconds, export it as <strong>both</strong> .M4A and .OGG formats
+      <ul>
+        <li>The files <strong>must</strong> be saved in the following filename format: <strong>Artist_Track_30.ogg/m4a</strong></li>
+      </ul>
+    </li>
+    <li>Upload the files to the FMQBproductions server in the folder <strong>/jPlayer/audio</strong></li>
+<li>When entering the info into the text fields in this applet, you must truncate the _30  and the middle <u>underscore</u> from the file name, leaving only ArtistName and TrackName within each field
+<ul>
+    <li>Press the <strong>Set Artist</strong> and <strong>Set Track</strong> buttons to generate the code</li>
+    </ul>
+</li>
+<li>Press the &quot;<strong>Save To Disk</strong>&quot; button, save the ArtistTrack_player.html file to your computer
+  <ul>
+    <li>Upload the ArtistTrack_player.html file to the <strong>/jPlayer</strong> root folder</li>
+    </ul>
+</li>
+<li>Copy all the code from the text-box labeled &quot;<strong>Code For ClickHere popup to player</strong>&quot;
+  <ul>
+    <li>Paste the code into the <strong>source code</strong> of the respective AFA page next to Artist - &quot;Track&quot; (Label)</li>
+  </ul>
+</li>
+</ul>
+</div>
+<br>
+<form name="myInput" onSubmit="return false">
+<table id="configBox" width="950" border="0" cellspacing="0" cellpadding="0" style="vertical-align:top;">
+<tr></tr>
+<tr>
+  <td width="507"><div class="hidden">Find Artist
+    <input type="text" id="findThis" name="findThis" value="artist">
+    (Do not change this value): </div>
+    <label for="replaceWith">Artist Name:</label>
+    <br />
+    <input type="text" id="replaceWith" name="replaceWith" value="" style="width:300px;" />
+    <button onClick="jFindArtist()">Set Artist</button></td>
+  <td width="439"><div class="hidden"> Find Artist:
+    <input type="text" id="findThist" name="findThist" value="track">
+    (Do not change this value) </div>
+    <label for="replaceWitht">Track Name:</label>
+    <br />
+    <input type="text" id="replaceWitht" name="replaceWitht" value="" style="width:300px;" />
+    <button id="setTrackButton" onClick="jFindTrack()">Set Track</button></td>
+</tr>
+<tr>
+  <td ><label for="filename"><br>
+    Filename:</label>
+    <br />
+    <input type="text" name="filename" id="filename" value="artisttrack_player.html" style="width:300px;" />
+    <strong><br>
+      </strong>If the artist name and track title don't match the supplied audio files <em>exactly</em>, you must reset. <br>
+    <p id="downloadify">You must have Flash 10 installed to download this file.</p></td>
+  <td style="padding:5px;" align="center" valign="top"><label for="jsCode">Code for ClickHere popup to player</label>
+<textarea name="jsCode" id="jsCode" cols="50" rows="7">
+<a href="http://www.fmqbproductions.co/jPlayer/artisttrack_player.html" rel="popup"><img title="FMQB Click Here audio sample of artist-track" border="0" alt="Click Hear for audio sample of artist-track" src="http://rope.zfmq.fimc.net/afamusic/clickhear_top2.gif" width="65" height="8" /></a></textarea></td>
+</tr>
+<tr>
+  <td colspan="2" ><h4>Hit the reset button for every new song!</h4>
+    <div id="toggleBox">
+      <label for="togglechx"><strong>Toggle Code Visibility</strong></label>
+      <input id="togglechx" type="checkbox" onChange="toggleCode();" />
+    </div>
+    <strong><span> Output code can be modified using "Toggle Code Visibility."
+    <input type="button" id="resetButton" value="Reset" onClick="window.location.href=window.location.href" />
+    </span></strong></td>
+</tr>
+</table>
+<!-- ***THIS IS THE PLAYER CODE THAT GETS MODIFIED AND SAVED!*** -->
+<div id="toggleVis" style="display:none;">
+<h3>WOH, Woh, woh! Don't even think about changing anything in this box below! ...Unless you REALLY know what you're doing and need to modify the code before its output to .html</h3>
+<textarea id="fulltext" name="fulltext" rows="27" cols="155">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>FMQB ClickHere audio sample of artist - "track"</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="http://www.fmqbproductions.co/jPlayer/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40207186-1', 'fmqb.com');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.fmqbproductions.co/jPlayer/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#jquery_jplayer_1").jPlayer({
+		ready: function (event) {
+			$(this).jPlayer("setMedia", {
+				m4a:"http://www.fmqbproductions.co/jPlayer/audio/artist_track_30.m4a", 
+				oga:"http://www.fmqbproductions.co/jPlayer/audio/artist_track_30.ogg"
+			});
+		$("#jquery_jplayer_1").jPlayer("play");
+		},
+		swfPath: "js",
+		supplied: "m4a, oga",
+		wmode: "window",
+		smoothPlayBar: true,
+		keyEnabled: true
+	});
+});
+</script>
+</head>
+<body style="margin: 0 auto;">
+<div class="spinner"></div>
+<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+<div id="moop">
+<div id="logo"></div>
+		<div id="jp_container_1" class="jp-audio">
+			<div class="jp-type-single">
+			  <div class="jp-gui jp-interface">
+				<ul class="jp-controls">
+						<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+						<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+						<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+						<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+						<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+						<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+					</ul>
+					<div class="jp-progress">
+						<div class="jp-seek-bar">
+							<div class="jp-play-bar"></div>
+						</div>
+					</div>
+				<div class="jp-volume-bar">
+				  <div class="jp-volume-bar-value"></div>
+				  </div>
+				  <div class="jp-time-holder">
+					  <div class="jp-current-time"></div>
+					  <div class="jp-duration"></div>
+
+					  <ul class="jp-toggles">
+						  <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+						  <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+					  </ul>
+				  </div>
+				</div>
+				<div class="jp-title">
+					<ul>
+						<li>artist-"track"</li>
+					</ul>
+				</div>
+				<div class="jp-no-solution">
+					<span>Update Required</span>
+					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+				</div>
+		  </div>
+</div>
+</div> 
+</body>
+</html>
+</textarea>
+</div>
+</form>
+
+<script type="text/javascript">
+$('#jsCode, #filename').attr('readonly','readonly');
+$('input').not(':checkbox').focusin(function() {
+	$(this).css({boxShadow: "0 0 10px -1px blue"})
+});
+$('input').focusout(function() {
+	$(this).css({boxShadow: "none"})
+});
+		
+			function load(){
+				Downloadify.create('downloadify',{
+					filename: function(){
+						return document.getElementById('filename').value;
+					},
+					data: function(){ 
+						return document.getElementById('fulltext').value;
+					},
+					onComplete: function(){ alert('Your File Has Been Saved!'); },
+					onCancel: function(){ alert('You have cancelled the saving of this file.'); },
+					onError: function(){ alert('You must put something in the File Contents or there will be nothing to save!'); },
+					swf: 'media/downloadify.swf',
+					downloadImage: 'images/download.png',
+					width: 100,
+					height: 30,
+					transparent: true,
+					append: false
+				});
+			}
+		</script>
+</body>
+</html>
